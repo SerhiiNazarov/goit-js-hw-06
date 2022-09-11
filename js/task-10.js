@@ -20,9 +20,12 @@ inputRef.addEventListener("change", () => {
 const createBoxes = function (amount) {
   for (let i = 0; i < amount; i++) {
     boxesRef.insertAdjacentHTML("beforeend", ` <div></div>`);
-    boxesRef.lastElementChild.style.backgroundColor = `${getRandomHexColor()}`;
-    boxesRef.lastElementChild.style.width = `${30 + i * 10}px`;
-    boxesRef.lastElementChild.style.height = `${30 + i * 10}px`;
+  }
+
+  for (let e = 0; e < boxesRef.children.length; e++) {
+    boxesRef.children[e].style.backgroundColor = `${getRandomHexColor()}`;
+    boxesRef.children[e].style.width = `${30 + e * 10}px`;
+    boxesRef.children[e].style.height = `${30 + e * 10}px`;
   }
 };
 
